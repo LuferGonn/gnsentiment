@@ -1,31 +1,50 @@
 import React from 'react';
 import "./styles/styles.scss";
-
+import Banner from "./Banner";
 import Card from './Card';
+
+const cursos = [
+  {
+    "titulo": "React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png",
+    "price": 40,
+    "link": "http://ed.team"
+  },
+  {
+    "titulo": "Drupal desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/drupal-poster-720_3.jpg?itok=e93ErhMN",
+    "price": 30,
+    "link": "http://ed.team"
+  }, {
+    "titulo": "Go desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/go_0.jpg?itok=k2amLhrN",
+    "price": 50,
+    "link": "http://ed.team"
+  }, {
+    "titulo": "HTML desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/HTML-2018.jpg?itok=Gyvm-W9t",
+    "price": 10,
+    "link": "http://ed.team"
+  }
+]
+
+
 
 const App = () =>(
   <>
-    <div className="main-banner img-container" id="main-banner">
-      <div className="ed-grid lg-grid-6">
-        <div className="lg-cols-4 lg-x-2">
-          <img className="main-banner__img" alt="Hola" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3m8DwULIGMeGZbm-lpKfPsn2C640LYoZV4MTlC4WSq1Nw262"/>
-          <div className="main-banner__data s-center">
-            <p className="t2 s-mb-0">Sabrina Lynn</p>
-            <p> Sexo en el mundo</p>
-            <a href="http://ed.team" className="button">Pagina Oficial</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Banner/>
 
-    <div className="ed-grid m-grid-3">
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-    </div>
+    <div className="ed-grid m-grid-4">
+      {/* {
+          cursos.map( (c) =><Card title={c.titulo} image={c.image} price={c.price} link={c.link}/>)
 
+      } */}
+
+{
+      cursos.map( c => <Card title={c.titulo} image={c.image} price={c.price} link={c.link} /> )
+    }
+    </div>
+    
 
   </>
 )
