@@ -1,6 +1,8 @@
 {
-  "short_name": "INSP Nutres",
-  "name": "INSP Nutres app v0",
+  "short_name": "COVID-D App",
+  "name": "Covid-d",
+  "icons": [
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
