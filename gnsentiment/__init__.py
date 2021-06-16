@@ -1,1 +1,1 @@
-from gcsentiment.core import *
+from gnsentiment.core import *
