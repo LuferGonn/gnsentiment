@@ -2,6 +2,8 @@ from google.cloud import language_v1
 import os
 
 class Gnsentiment():
+    '''Class that configures environment to access the gcp api (Nlp)'''
+
     def __init__(self, path=''):
         self._var = 'GOOGLE_APPLICATION_CREDENTIALS'
         self._path_api = path
@@ -13,6 +15,8 @@ class Gnsentiment():
             self._error = True
 
     def _createVar(self):
+        '''Create environment variable to access the GCP api (Nlp)'''
+
         if self._path_api == '' or self._path_api[-5:] != '.json':
             return True
         
@@ -25,6 +29,8 @@ class Gnsentiment():
             return True
         
     def analyze_sentiment(self, text):
+        '''Analyze plaintext sentiment with GCP (Nlp)'''
+
         if self._error:
             return {
                 'error': True
@@ -56,6 +62,8 @@ class Gnsentiment():
             }
         
     def sentiment(self, score):
+        '''Calculate the sentiment by ranges ((-1) - 1)'''
+
         if score >= -1.0 and score < -0.25:
             return 0
         elif score >= -0.25 and score <= 0.25:
